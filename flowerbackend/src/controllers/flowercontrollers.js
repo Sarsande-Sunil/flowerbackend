@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { Flower,Wedding} = require("../models/flowermodel")
+const { Flower,Pot} = require("../models/flowermodel")
 
 const router = express.Router();
 
@@ -24,19 +24,19 @@ router.get("/homepage", async (req, res) => {
 });
 
 // curd operation for flower 
-router.post("/wedding", async (req, res) => {
+router.post("/pot", async (req, res) => {
   try {
-    let wedding = await Wedding.create(req.body);
-    res.status(201).send(wedding);
+    let pot = await Pot.create(req.body);
+    res.status(201).send(pot);
   } catch (err) {
     console.log(err);
   }
 });
 
-router.get("/wedding", async (req, res) => {
+router.get("/pot", async (req, res) => {
   try {
-    let wedding = await Flower.find().lean().exec();
-    res.status(200).send(wedding);
+    let pot = await Pot.find().lean().exec();
+    res.status(200).send(pot);
   } catch (err) {
     console.log(err);
   }
