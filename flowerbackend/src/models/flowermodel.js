@@ -5,8 +5,8 @@ const flowerSchemas = new mongoose.Schema(
   {
     id: { type: Number, required: true },
     image: { type: String, required: true },
-    name: { type: String, require: true, minlength: 4, maxlength: 12 },
-    price: { type: Number, require: true, minlength: 2, maxlength: 6 },
+    name: { type: String, require: true },
+    price: { type: Number, require:true},
   },
   {
     versionKey: false,
