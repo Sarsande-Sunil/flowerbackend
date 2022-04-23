@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/flowers", controllers);
 
 // poet
-const PORT = process.env.PORT || 4000;
+const PORT = 4000;
 //const PORT = 5000;
 
 // connect to the mongoose to mongodbatlas
