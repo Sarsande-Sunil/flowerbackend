@@ -1,10 +1,10 @@
 const express = require("express");
 
-const { Flower,Pot} = require("../models/flowermodel")
+const { Flower, Pot } = require("../models/flowermodel");
 
 const router = express.Router();
 
-// curd operation for flower 
+// curd operation for flower
 router.post("/homepage", async (req, res) => {
   try {
     let flower = await Flower.create(req.body);
@@ -23,7 +23,20 @@ router.get("/homepage", async (req, res) => {
   }
 });
 
-// curd operation for flower 
+// get single product
+router.get("/homepage/:id", async (req, res) => {
+  try {
+    let flower = await Flower.findById(req.params.id);
+    res.status(200).json({
+      succsess:true,
+      flower,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+// curd operation for flower
 router.post("/pot", async (req, res) => {
   try {
     let pot = await Pot.create(req.body);
@@ -41,8 +54,5 @@ router.get("/pot", async (req, res) => {
     console.log(err);
   }
 });
-
-
-
 
 module.exports = router;

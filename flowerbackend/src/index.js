@@ -12,7 +12,7 @@ app.use("/flower", flower_data);
 
 require("dotenv").config();
 
-const PORT = process.env.PORT|| 4000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, async () => {
   try {
     await connect();
